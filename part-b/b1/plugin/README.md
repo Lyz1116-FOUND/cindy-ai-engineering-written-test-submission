@@ -2,7 +2,7 @@
 
 用于 Cindy AI 工程实习生笔试 B1(b) 的第三方插件。插件 ID 为 `lyz-pr-dashboard`，源码独立于 Cindy 宿主，不修改宿主或权限守卫。
 
-源码版本 **1.0.1**。运行截图见 [`../screenshots/`](../screenshots/)，验收记录见 [`../validation/acceptance.md`](../validation/acceptance.md)；安装包（`.cindy`）暂未随仓库发布，可由 Agent 通过宿主 Forge 从本目录安装。
+源码版本 **1.0.2**。运行截图见 [`../screenshots/`](../screenshots/)，验收记录见 [`../validation/acceptance.md`](../validation/acceptance.md)；安装包（`.cindy`）暂未随仓库发布，可由 Agent 通过宿主 Forge 从本目录安装。
 
 ## 做了什么
 

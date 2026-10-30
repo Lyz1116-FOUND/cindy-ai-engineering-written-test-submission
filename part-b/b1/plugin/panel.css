@@ -15,18 +15,31 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
 #updated { margin: 12px 0; }
 #notice:not(:empty) { margin: 12px 0; padding: 12px; border: 1px solid var(--border-default); border-radius: 12px; overflow-wrap: anywhere; }
 #notice.error { color: var(--error-fg, var(--text-primary)); border-color: var(--error-border, var(--border-default)); }
-.summary { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 16px; }
-.summary span { font-size: 12px; }
+.summary { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-bottom: 16px; }
 .search-label { display: block; font-size: 12px; margin-bottom: 6px; color: var(--text-secondary); }
 input { width: 100%; min-height: 36px; padding: 6px 12px; border-radius: 9999px; background: var(--surface-elevated, var(--surface)); border: 1px solid var(--border-default); }
 input::placeholder { color: var(--text-placeholder, var(--text-secondary)); }
-.pr { padding: 16px 0; border-bottom: 1px solid var(--border-default); }
-.pr-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; }
-.repo { font-size: 12px; color: var(--text-secondary); overflow-wrap: anywhere; }
-.badge { font-size: 12px; font-weight: 500; }
-.badge.failed { color: var(--error-fg, var(--text-primary)); }
-h2 { margin: 6px 0 8px; font-size: 15px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; }
+
+/* PR 卡片：surface 卡 + 圆角 + 描边 + 微投影，代替裸分隔线，形成层次 */
+#list { display: flex; flex-direction: column; gap: 12px; }
+.pr { padding: 14px 16px; border: 1px solid var(--border-default); border-radius: 14px; background: var(--surface-elevated, var(--surface)); box-shadow: 0 1px 2px light-dark(rgba(0,0,0,.05), rgba(0,0,0,.3)); transition: border-color var(--motion-fast, 120ms) var(--motion-ease-out, ease-out); }
+.pr:hover { border-color: var(--text-secondary-mid, var(--border-default)); }
+.pr-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 12px; }
+.repo { font-size: 12px; color: var(--text-secondary); overflow-wrap: anywhere; display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.draft-chip { font-size: 11px; line-height: 1; padding: 3px 7px; border: 1px solid var(--border-default); border-radius: 9999px; }
+h2 { margin: 8px 0 6px; font-size: 15px; line-height: 1.5; font-weight: 600; overflow-wrap: anywhere; }
 .branch { font-size: 12px; overflow-wrap: anywhere; color: var(--text-secondary); }
+
+/* CI 状态徽标：pill + 状态圆点。失败/错误用宿主语义 token（--error-*），
+   其余状态宿主主题未提供语义色，用 light-dark() 跟随宿主下发的明暗档。 */
+.badge { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 9999px; font-size: 12px; font-weight: 500; line-height: 1.7; border: 1px solid var(--border-default); color: var(--text-secondary); background: var(--surface-chip); white-space: nowrap; }
+.badge .dot { width: 6px; height: 6px; border-radius: 9999px; background: currentColor; flex-shrink: 0; }
+.badge-passed { color: #1a7f37; color: light-dark(#1a7f37, #3fb950); border-color: rgba(26,127,55,.4); border-color: light-dark(rgba(26,127,55,.45), rgba(63,185,80,.45)); background: rgba(26,127,55,.08); background: light-dark(rgba(26,127,55,.08), rgba(63,185,80,.14)); }
+.badge-failed { color: var(--error-fg, #cf222e); border-color: var(--error-border, rgba(207,34,46,.45)); background: var(--error-bg, rgba(207,34,46,.08)); }
+.badge-running { color: #9a6700; color: light-dark(#9a6700, #d29922); border-color: rgba(154,103,0,.4); border-color: light-dark(rgba(154,103,0,.45), rgba(210,153,34,.5)); background: rgba(154,103,0,.08); background: light-dark(rgba(154,103,0,.08), rgba(210,153,34,.14)); }
+.badge-error { color: #9a6700; color: light-dark(#9a6700, #d29922); border-color: rgba(154,103,0,.4); border-color: light-dark(rgba(154,103,0,.45), rgba(210,153,34,.5)); background: rgba(154,103,0,.08); background: light-dark(rgba(154,103,0,.08), rgba(210,153,34,.14)); }
+.badge-none, .badge-other { color: var(--text-secondary); }
+
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
 .action-primary { background: var(--accent-cta-bg); color: var(--accent-pure-cta-fg); border-color: var(--accent-cta-bg); }
 .action-primary:hover { background: var(--accent-cta-bg); }
@@ -35,8 +48,10 @@ summary { cursor: pointer; min-height: 28px; font-size: 12px; color: var(--text-
 .details-body { padding: 6px 0; font-size: 12px; overflow-wrap: anywhere; }
 .check-row { padding: 6px 0; border-bottom: 1px solid var(--border-default); }
 code { font-size: 11px; overflow-wrap: anywhere; white-space: normal; }
-.analysis { margin-top: 12px; padding-left: 12px; border-left: 2px solid var(--border-default); }
-.analysis .status { font-weight: 500; font-size: 13px; }
+
+/* 分析状态块：内嵌 chip 底 + 主题色左缘，与卡片主体拉开层次 */
+.analysis { margin-top: 12px; padding: 10px 12px; border: 1px solid var(--border-default); border-left: 3px solid var(--accent-soft, var(--border-default)); border-radius: 10px; background: var(--surface-chip); }
+.analysis .status { font-weight: 600; font-size: 13px; }
 .analysis .hint { overflow-wrap: anywhere; }
 .analysis .actions button { padding: 4px 12px; }
 .empty { padding: 32px 0; color: var(--text-secondary); }

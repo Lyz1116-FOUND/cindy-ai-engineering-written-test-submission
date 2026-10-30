@@ -4,7 +4,7 @@
   "name": "我的 PR 看板",
   "description": "查看授权范围内我创建且仍打开的 GitHub PR、CI 状态，收集当前提交的失败证据并交给可见的 AI 任务分析。",
   "whenToUse": "查看我创建的待处理 GitHub PR、CI 检查状态，分析某条 PR 当前提交的失败检查与日志时。",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "releaseNotes": "修复日志摘录遗漏末尾退出错误、同 SHA 多轮检查误报失败、历史 job 混入当前证据及运行中 workflow 无法采集失败 job；补充边界回归测试。权限与宿主接口不变。",
   "minCindyVersion": "0.1.120",
   "entry": "main.js",

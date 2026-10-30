@@ -7,6 +7,7 @@ let snapshot=null,analyses={},stale=true,busy=false;
 const labels={passed:'✓ 通过',failed:'× 失败',running:'◌ 运行中',none:'— 无检查',error:'! 获取失败',other:'— 其他结论'};
 const taskLabels={prepared:'准备交接',creating:'正在创建任务',sending:'正在交接',queued:'已受理 · 等待执行',running:'AI 运行中',stopping:'正在停止',completed:'分析已完成',failed:'分析失败',cancelled:'已取消',interrupted:'已中断',uncertain:'受理结果待确认',reconciling:'执行结果待核实',blocked:'交接被阻止',obsolete:'证据已过期'};
 function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=String(text);return n;}
+function badge(state,text){const b=el('span',`badge badge-${state}`);b.append(el('span','dot'),document.createTextNode(text));return b;}
 function link(text,url){const a=el('a',null,text);const href=safeLink(url);if(href)a.href=href;return a;}
 function notice(text,error=false){$('#notice').textContent=text;$('#notice').className=error?'error':'';}
 function button(text,fn,primary=false){const b=el('button',primary?'action-primary':null,text);b.type='button';b.disabled=busy;b.addEventListener('click',fn);return b;}
@@ -34,13 +35,13 @@ function render(){
   $('#updated').textContent=`${stale?'缓存 · 已陈旧，正在核对最新数据':'更新于'} ${date(snapshot.updatedAt)} · ${snapshot.prs.length}${snapshot.total!==undefined?` / ${snapshot.total}`:''} 条${complete?'':' · 数据不完整'}`;
   if(stale&&!busy)$('#updated').textContent=`缓存 · 已陈旧 · ${date(snapshot.updatedAt)} · ${snapshot.prs.length} 条`;
   const counts={};for(const p of snapshot.prs)counts[p.ci.state]=(counts[p.ci.state]||0)+1;
-  for(const state of Object.keys(labels))if(counts[state])$('#summary').append(el('span',state==='failed'?'badge failed':'',`${labels[state]} ${counts[state]}`));
+  for(const state of Object.keys(labels))if(counts[state])$('#summary').append(badge(state,`${labels[state]} ${counts[state]}`));
   const term=$('#search').value.toLowerCase().trim();
   const rows=snapshot.prs.filter(p=>`${p.repository} ${p.number} ${p.title}`.toLowerCase().includes(term));
   if(!rows.length)list.append(el('p','empty',term?'没有匹配的 PR。':snapshot.complete?'当前授权范围内没有我创建且仍打开的 PR。':'暂未取得 PR，数据不完整。请检查上方错误或凭证权限。'));
   for(const pr of rows){
     const article=el('article','pr'),top=el('div','pr-top');
-    top.append(el('span','repo',`${pr.repository} · #${pr.number}${pr.draft?' · Draft':''}`),el('span',`badge ${pr.ci.state}`,labels[pr.ci.state]||'未知状态'));
+    const repo=el('span','repo',`${pr.repository} · #${pr.number}`);if(pr.draft)repo.append(el('span','draft-chip','Draft'));top.append(repo,badge(pr.ci.state,labels[pr.ci.state]||'未知状态'));
     article.append(top);const h=el('h2');h.append(link(pr.title,pr.url));article.append(h);
     article.append(el('p','branch',pr.headSHA?`${pr.headBranch} → ${pr.baseBranch} · ${pr.headSHA.slice(0,12)}`:'PR 详情未取得，无法确认 head SHA。'));
     const details=el('details');details.append(el('summary',null,'提交与检查详情'));const body=el('div','details-body');
