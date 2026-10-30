@@ -7,6 +7,7 @@ part0/          Part 0：项目导览、每日单词卡方案、提交记录与�
 part-a/         Part A：A1 日期参照问题、A2 排查报告审阅
 part-b/b1/      Part B B1：我的 PR 看板（设计、插件源码、截图、验收）
 part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始输入
+final-ai-use/  最后一题：AI 使用经历、用量与不确定性
 ```
 
 ## 正式答案
@@ -22,6 +23,7 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 | Part B B1(b) | 插件实作与验证 | [源码与说明](part-b/b1/plugin/README.md) · [截图](part-b/b1/screenshots/) · [验收记录](part-b/b1/validation/acceptance.md) |
 | Part B B2(a) | 收工 Skill | [SKILL.md](part-b/b2/end-of-work/SKILL.md) |
 | Part B B2(b)(c) | 固定动作与 AI 判断、Skill 与插件的选择 | [答案](part-b/b2/answer.md) · [整理笔记](part-b/b2/notes.md) · [首次验证](part-b/b2/validation/agent-execution/README.md) · [修订后重测](part-b/b2/validation/agent-retest/README.md) · [原始输入](part-b/b2/raw/request.md) |
+| 最后一题 | 我怎么用 AI（a—e） | [答案](final-ai-use/answer.md) · [整理说明](final-ai-use/notes.md) |
 
 ## B1(b) 插件速览
 
