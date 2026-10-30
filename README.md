@@ -25,9 +25,9 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 
 ## B1(b) 插件速览
 
-「我的 PR 看板」为 Cindy 第三方插件（`lyz-pr-dashboard` v1.0.1）：右侧栏展示当前 PAT 授权内我创建的 open PR 与 CI 状态；点击失败 PR 的「分析 CI」自动采集该 head SHA 的失败证据并交给 AI 分析。53 项自动化测试（Node 20/22），CI 见 [.github/workflows/pr-dashboard.yml](.github/workflows/pr-dashboard.yml)。
+「我的 PR 看板」为 Cindy 第三方插件（`lyz-pr-dashboard` v1.0.2）：右侧栏展示当前 PAT 授权内我创建的 open PR 与 CI 状态；点击失败 PR 的「分析 CI」自动采集该 head SHA 的失败证据并交给 AI 分析。53 项自动化测试，本地复跑通过；CI 配置覆盖 Node 20/22，见 [.github/workflows/pr-dashboard.yml](.github/workflows/pr-dashboard.yml)。
 
-安装包（`.cindy`）暂未随仓库发布，可由 Agent 通过宿主 Forge 从 `part-b/b1/plugin/` 源码目录安装。
+已提供 [1.0.2 安装包](part-b/b1/plugin/lyz-pr-dashboard-1.0.2.cindy)。新版调整了 CI 徽标和卡片层次；尚未安装到 Cindy，双主题预览不能代替新版实机验收。包哈希、源码一致性及验证范围见 [1.0.2 交付核对](part-b/b1/validation/release-1.0.2.md)。此前 1.0.1 的真实运行截图和闭环记录继续保留，不作为 1.0.2 已安装的证明。
 
 ## B2 收工 Skill 与实际结果
 

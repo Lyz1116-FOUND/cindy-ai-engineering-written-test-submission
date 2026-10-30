@@ -2,7 +2,7 @@
 
 用于 Cindy AI 工程实习生笔试 B1(b) 的第三方插件。插件 ID 为 `lyz-pr-dashboard`，源码独立于 Cindy 宿主，不修改宿主或权限守卫。
 
-源码版本 **1.0.2**。运行截图见 [`../screenshots/`](../screenshots/)，验收记录见 [`../validation/acceptance.md`](../validation/acceptance.md)；安装包（`.cindy`）暂未随仓库发布，可由 Agent 通过宿主 Forge 从本目录安装。
+源码版本 **1.0.2**，已提供 [对应安装包](lyz-pr-dashboard-1.0.2.cindy)。新版尚未安装到 Cindy；[此前运行截图](../screenshots/)与[验收记录](../validation/acceptance.md)属于 1.0.1 等已有验收过程，不能代替新版实机验证。包哈希与本次核对见 [1.0.2 交付核对](../validation/release-1.0.2.md)。
 
 ## 做了什么
 
@@ -27,7 +27,7 @@
 
 ## 安装与配置
 
-1. 安装包发布前，可明确让 Agent 通过 Forge 从本源码目录安装（如 `ghost_forge_install`）；首次安装由宿主展示网络和普通任务能力并确认。
+1. 在 Cindy 中导入本目录的 `lyz-pr-dashboard-1.0.2.cindy`，或明确让 Agent 通过 Forge 从本源码目录安装（如 `ghost_forge_install`）；首次安装由宿主展示网络和普通任务能力并确认。提供包不代表已执行安装。
 2. 插件详情 → GitHub PAT：保存/替换 token；清除按钮删除宿主凭证。也可在 Agent 首次调用时使用宿主 Setup 卡。**不要把 PAT 发到聊天中。**
 3. Fine-grained PAT 选择要查看的仓库，并授予 Pull requests、Checks、Commit statuses、Actions 读取权限（Metadata 按 GitHub 默认）。组织仓库可能需要审批/SSO。经典 PAT 对私有仓库通常需要 `repo`，权限较宽，优先使用 fine-grained PAT。
 4. 开启右侧“我的 PR 看板”。关闭后可在侧栏 `+` 或插件详情重新打开。宿主绘制标题栏和关闭按钮。
