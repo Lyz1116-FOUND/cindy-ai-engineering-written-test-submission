@@ -1,0 +1,297 @@
+{
+  "verifiedDate": "2026-10-30",
+  "timezone": "Asia/Tokyo",
+  "repository": "Lyz1116-FOUND/cindy-ai-engineering-written-test",
+  "pullRequest": 2,
+  "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+  "runtimeWorkflowCommit": "24877b990c7d63a4de32344f0b1c2223f26aee84",
+  "runtimeWorkflowBlob": "6201d952e2d9c096cda4a4b880c51f39d2f8d529",
+  "scenarios": [
+    {
+      "name": "draft_without_marker",
+      "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+      "runId": 40903007578,
+      "expectedConclusion": "success",
+      "jobs": [
+        {
+          "id": 123550105584,
+          "checkId": 123550105584,
+          "name": "plugin (22)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        },
+        {
+          "id": 123550106050,
+          "checkId": 123550106050,
+          "name": "plugin (20)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "draft_with_marker",
+      "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+      "runId": 40903133819,
+      "expectedConclusion": "failure",
+      "jobs": [
+        {
+          "id": 123550552781,
+          "checkId": 123550552781,
+          "name": "plugin (20)",
+          "conclusion": "failure",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "failure"
+            }
+          ]
+        },
+        {
+          "id": 123550553618,
+          "checkId": 123550553618,
+          "name": "plugin (22)",
+          "conclusion": "failure",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ready_with_marker",
+      "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+      "runId": 40903280460,
+      "expectedConclusion": "success",
+      "jobs": [
+        {
+          "id": 123551074621,
+          "checkId": 123551074621,
+          "name": "plugin (20)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        },
+        {
+          "id": 123551074931,
+          "checkId": 123551074931,
+          "name": "plugin (22)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "converted_to_draft_with_marker",
+      "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+      "runId": 40903520919,
+      "expectedConclusion": "failure",
+      "jobs": [
+        {
+          "id": 123551938295,
+          "checkId": 123551938295,
+          "name": "plugin (20)",
+          "conclusion": "failure",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "failure"
+            }
+          ]
+        },
+        {
+          "id": 123551939037,
+          "checkId": 123551939037,
+          "name": "plugin (22)",
+          "conclusion": "failure",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "failure"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "draft_marker_removed",
+      "headSHA": "0f0260737921d28cb9788be61b0bb3bdaf8dad3e",
+      "runId": 40903969800,
+      "expectedConclusion": "success",
+      "jobs": [
+        {
+          "id": 123553540129,
+          "checkId": 123553540129,
+          "name": "plugin (22)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        },
+        {
+          "id": 123553540799,
+          "checkId": 123553540799,
+          "name": "plugin (20)",
+          "conclusion": "success",
+          "steps": [
+            {
+              "number": 4,
+              "name": "Check plugin entry points",
+              "conclusion": "success"
+            },
+            {
+              "number": 5,
+              "name": "Test PR and CI handoff behavior",
+              "conclusion": "success"
+            },
+            {
+              "number": 6,
+              "name": "B1 controlled failure sample",
+              "conclusion": "skipped"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "apiSnapshotReplay": {
+    "rawCheckCount": 10,
+    "rawAggregateState": "failed",
+    "selectedCheckIds": [
+      123553540799,
+      123553540129
+    ],
+    "supersededCheckCount": 8,
+    "state": "passed",
+    "complete": true
+  },
+  "limits": [
+    "The five live scenarios ran the 43-test version at this SHA; nine later regression tests cover check history selection.",
+    "Snapshot replay executes the updated local production client with real GitHub API responses; it is not an installed-plugin execution.",
+    "Original webhook event payloads were not archived. No credentials or full logs are stored here."
+  ]
+}

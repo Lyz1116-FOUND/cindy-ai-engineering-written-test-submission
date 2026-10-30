@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-10-30",
+  "repository": "Lyz1116-FOUND/cindy-ai-engineering-written-test",
+  "pullRequest": 1,
+  "headSHA": "3cb6d7e5de9191ac3edb3347995b3ebcb37ffb19",
+  "ci": {
+    "runId": 40899275436,
+    "runAttempt": 1,
+    "checkId": 123536798241,
+    "jobId": 123536798241,
+    "conclusion": "failure",
+    "failedStep": {
+      "number": 6,
+      "name": "B1 controlled failure sample"
+    },
+    "log": {
+      "totalLines": 314,
+      "truncated": true,
+      "redacted": true,
+      "excerptLines": [
+        293,
+        297
+      ]
+    },
+    "fixture": "Explicit controlled failure in draft PR, not a production defect"
+  },
+  "handoff": {
+    "instanceId": "_root__lyz-pr-dashboard",
+    "namespace": null,
+    "taskId": "24d48a57-853e-44ac-b075-decfa3a91c74",
+    "runId": "b46b4808-3836-4dfd-8a31-8c9f0f1db4bb",
+    "outputMessageId": "a6xfcnmpkr4zrtgf7az3eo1r",
+    "status": "completed",
+    "assistantPhase": "final_answer",
+    "replyToClientId": "plugin-task:b46b4808-3836-4dfd-8a31-8c9f0f1db4bb",
+    "outputCreatedAt": "2026-10-29T15:17:12.580Z"
+  },
+  "limitations": [
+    "Actual build source commit is not public (HTTP 422).",
+    "Actual Dark host observed; Light host not visually checked.",
+    "One initial read-only get_pr_ci request failed with NETWORK_ERROR; the next explicit read succeeded.",
+    "Later user follow-up in the same task is separate from the completed original plugin input."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "initialInstall": {
+    "ok": true,
+    "action": "updated",
+    "id": "lyz-pr-dashboard",
+    "version": "1.0.1",
+    "enabled": true,
+    "instanceId": "_root__lyz-pr-dashboard",
+    "namespace": null
+  },
+  "finalInstall": {
+    "ok": true,
+    "action": "updated",
+    "id": "lyz-pr-dashboard",
+    "name": "我的 PR 看板",
+    "version": "1.0.1",
+    "enabled": true,
+    "instanceId": "_root__lyz-pr-dashboard",
+    "namespace": null,
+    "atUtc": "2026-10-29T16:09:53Z",
+    "note": "handoff.js 补宿主无 code 错误兼容后经 Forge 重新校验、打包并原位更新；启用状态、配置与数据保持不变。"
+  },
+  "finalPackageSha256": "0c10653b9355bdb20238d866f1dfb5152ef0e8298669bd7ef9ac6002e77c61ec",
+  "scope": "Forge 原位更新回执字段摘录；安装不等于已完成业务验收。最终包字节和校验在源码目录外 artifacts/b1/package.sha256 记录。"
+}

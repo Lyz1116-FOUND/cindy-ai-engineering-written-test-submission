@@ -1,0 +1,7 @@
+{
+  "scaffold": {"ok":true,"template":"plain","id":"lyz-pr-dashboard","minCindyVersion":"0.1.120"},
+  "pack": {"ok":true,"cindyPath":"/Users/foundtt/my_cow_horse/cindy-main/written-test/submission/plugins/pr-dashboard/lyz-pr-dashboard-1.0.0.cindy","id":"lyz-pr-dashboard","version":"1.0.0"},
+  "install": {"ok":true,"action":"installed","id":"lyz-pr-dashboard","version":"1.0.0","enabled":true,"instanceId":"_root__lyz-pr-dashboard","namespace":null},
+  "update": {"ok":true,"action":"updated","id":"lyz-pr-dashboard","version":"1.0.0","enabled":true,"instanceId":"_root__lyz-pr-dashboard","namespace":null},
+  "scope": "Forge 返回结果的相关字段摘录；打包或安装不等于已通过真实业务验收。最终包校验和在 acceptance.md 中记录。"
+}
