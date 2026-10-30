@@ -12,6 +12,8 @@ final-ai-use/  最后一题：AI 使用经历、用量与不确定性
 
 ## 正式答案
 
+简明答题文档：[Word](deliverables/李岩泽_Cindy笔试答题文档_简版.docx) · [在线阅读](deliverables/答题文档_简版.md)。完整源码、Skill 和证据仍按下表分题存放。
+
 | 部分 | 题目 | 材料 |
 | --- | --- | --- |
 | Part 0(a) | 项目导览 | [阅读](part0/0a-project-guide.md) · [下载](part0/Cindy项目导览_修订版.docx) |
