@@ -1,0 +1,185 @@
+[
+  {
+    "sequence": 0,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing-SKILL.md"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 1,
+    "type": "Bash",
+    "input": {
+      "command": "pwd && git rev-parse HEAD && git branch --show-current && git status --porcelain=v1 && echo \"---BASE---\" && git cat-file -t 24d459c7840f5e73f1f2ef905c4bf9f8eab62792",
+      "description": "Show repo HEAD, branch, and status"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 2,
+    "type": "Bash",
+    "input": {
+      "command": "ls -la && find . -maxdepth 2 -name 'AGENTS.md' -o -maxdepth 2 -name 'CLAUDE.md' -o -maxdepth 2 -iname 'readme*' -o -maxdepth 2 -name 'package.json' -o -maxdepth 2 -name '*.config.*' | head -50",
+      "description": "List project files and find guidance/config files"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 3,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/AGENTS.md"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 4,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/package.json"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 5,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/cli.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 6,
+    "type": "Bash",
+    "input": {
+      "command": "find src test -type f -maxdepth 3 -print -exec echo '---' \\; -exec cat {} \\;",
+      "description": "Show source and test files"
+    },
+    "toolReportedError": true
+  },
+  {
+    "sequence": 7,
+    "type": "Glob",
+    "input": {
+      "pattern": "src/**/*"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 8,
+    "type": "Glob",
+    "input": {
+      "pattern": "test/**/*"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 9,
+    "type": "Bash",
+    "input": {
+      "command": "git log --oneline --decorate 24d459c..HEAD && echo \"--- names ---\" && git diff --name-status 24d459c..HEAD && echo \"--- staged ---\" && git diff --cached --name-status && echo \"--- unstaged ---\" && git diff --name-status && echo \"--- untracked ---\" && git ls-files --others --exclude-standard",
+      "description": "Show commits and file changes since baseline"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 10,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/src/math.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 11,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/test/math.test.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 12,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-passing/test/extra.test.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 13,
+    "type": "Bash",
+    "input": {
+      "command": "git show 24d459c:src/math.js && echo '=== DIFF committed ===' && git diff 24d459c..HEAD && echo '=== DIFF unstaged ===' && git diff && echo '=== staged ===' && git diff --cached",
+      "description": "Show baseline content and all diffs"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 14,
+    "type": "Bash",
+    "input": {
+      "command": "npm test; echo \"EXIT_CODE:$?\"",
+      "description": "Run project test suite via npm test",
+      "timeout": 120000
+    },
+    "toolReportedError": true,
+    "testToolResult": "Permission to use Bash has been denied because Claude Code is running in don't ask mode. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed."
+  },
+  {
+    "sequence": 15,
+    "type": "Bash",
+    "input": {
+      "command": "node --test test/*.test.js; echo \"EXIT_CODE:$?\"",
+      "description": "Run the test command defined in package.json",
+      "timeout": 120000
+    },
+    "toolReportedError": true,
+    "testToolResult": "Permission to use Bash has been denied because Claude Code is running in don't ask mode. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed."
+  },
+  {
+    "sequence": 16,
+    "type": "Bash",
+    "input": {
+      "command": "npm test",
+      "description": "Run project test suite",
+      "timeout": 120000
+    },
+    "toolReportedError": false,
+    "testToolResult": "> test\n> node --test test/*.test.js\n\n✔ fixture negative (1.096834ms)\n✔ adds two inputs (0.92875ms)\n✔ supports zero (0.0795ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 120.2415"
+  },
+  {
+    "sequence": 17,
+    "type": "Bash",
+    "input": {
+      "command": "git status --porcelain=v1 && echo '---' && git diff --stat && echo '---' && git diff --cached --stat",
+      "description": "Re-check working tree after tests"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 18,
+    "type": "Grep",
+    "input": {
+      "pattern": "debugger|console\\.(log|debug|trace|dir)|TODO|FIXME|XXX|HACK|\\.only\\(|\\.skip\\(|describe\\.skip|it\\.skip|test\\.skip|localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0|process\\.env|mock|stub|temp|tmp|fixture|hardcod|setTimeout|sleep\\(",
+      "path": "<fixture-root>/claude-passing",
+      "glob": "{cli.js,src/math.js,test/*.test.js}",
+      "output_mode": "content",
+      "-n": true
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 19,
+    "type": "Grep",
+    "input": {
+      "pattern": "api[_-]?key|secret|password|passwd|token|Bearer|BEGIN (RSA|OPENSSH|EC|PRIVATE)|AKIA[0-9A-Z]{16}|/Users/|/tmp/|/private/",
+      "path": "<fixture-root>/claude-passing",
+      "glob": "{cli.js,src/math.js,test/*.test.js,package.json,AGENTS.md}",
+      "output_mode": "content",
+      "-n": true
+    },
+    "toolReportedError": false
+  }
+]

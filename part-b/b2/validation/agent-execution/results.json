@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Tokyo",
+  "skillSHA256": "7c587e6a20ba399ca589062a49fc5207a69bb07059bd51812f5798dd2f6972de",
+  "invocation": "Explicitly read supplied SKILL.md and act on 收工; automatic discovery was not tested",
+  "pi": "executable not found on PATH; not executed",
+  "allConformant": false,
+  "cases": [
+    {
+      "agent": "codex",
+      "case": "passing",
+      "cliVersion": "codex-cli 0.165.0-alpha.1.2",
+      "model": "not exposed in execution receipt",
+      "agentProcessExitCode": 0,
+      "agentElapsedSeconds": 125.19,
+      "testExpected": {
+        "passed": 3,
+        "failed": 0,
+        "exitCode": 0
+      },
+      "testOutcomeMatched": true,
+      "testBeforeFullReview": true,
+      "scanRestrictedToChangeScope": true,
+      "stagedResidueIdentified": null,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "fixtureBefore": {
+        "head": "59c553d1a3762751ef1d2510f1a85b8e4f718605",
+        "base": "24d459c7840f5e73f1f2ef905c4bf9f8eab62792",
+        "index": "705ae4aa5fb21964ea7c2db9e5746496b84ab41f",
+        "status": "M cli.js\n?? test/extra.test.js",
+        "files": {
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "test/extra.test.js": "3df4fa1f9cfd49837bbf94baf0ef7785dfac239f8e2ad21331dba3aeb9019073",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "5b63136552577a64d788dc3cd4552739d0d60f9e1adb63ec4dfb6932d56fc75d"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 168103,
+        "cached_input_tokens": 140416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4286,
+        "reasoning_output_tokens": 748
+      },
+      "modelUsageAsReported": null,
+      "permissionDenials": 0
+    },
+    {
+      "agent": "codex",
+      "case": "failure-and-residue",
+      "cliVersion": "codex-cli 0.165.0-alpha.1.2",
+      "model": "not exposed in execution receipt",
+      "agentProcessExitCode": 0,
+      "agentElapsedSeconds": 187.4,
+      "testExpected": {
+        "passed": 0,
+        "failed": 2,
+        "exitCode": 1
+      },
+      "testOutcomeMatched": true,
+      "testBeforeFullReview": true,
+      "scanRestrictedToChangeScope": true,
+      "stagedResidueIdentified": true,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "fixtureBefore": {
+        "head": "59c553d1a3762751ef1d2510f1a85b8e4f718605",
+        "base": "24d459c7840f5e73f1f2ef905c4bf9f8eab62792",
+        "index": "0e72794dda10c3e42fb6d0d608aa9263773ec930",
+        "status": "M cli.js\n M src/math.js\nAM src/staged.js\n?? debug-output.log\n?? debug.js",
+        "files": {
+          "debug-output.log": "e814e35d1a50abb9ea87a73ea5c44690ac92bd6de2147125186ab803ed4fbb3e",
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "debug.js": "b0d8421955a238f096f846cfb6e36fc5e72199ce149945e3d7d1edf0f4aafd51",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "75cfacb7faac086c50b23ac4b29a709eb8680999e6756f620ca76d42aba07cab",
+          "src/staged.js": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 234484,
+        "cached_input_tokens": 202240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5901,
+        "reasoning_output_tokens": 1741
+      },
+      "modelUsageAsReported": null,
+      "permissionDenials": 0
+    },
+    {
+      "agent": "claude",
+      "case": "passing",
+      "cliVersion": "Claude Code 2.1.304",
+      "model": "DeepSeek-flash[1m]",
+      "agentProcessExitCode": 0,
+      "agentElapsedSeconds": 40.98,
+      "testExpected": {
+        "passed": 3,
+        "failed": 0,
+        "exitCode": 0
+      },
+      "testOutcomeMatched": true,
+      "testBeforeFullReview": false,
+      "scanRestrictedToChangeScope": true,
+      "stagedResidueIdentified": null,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "fixtureBefore": {
+        "head": "59c553d1a3762751ef1d2510f1a85b8e4f718605",
+        "base": "24d459c7840f5e73f1f2ef905c4bf9f8eab62792",
+        "index": "705ae4aa5fb21964ea7c2db9e5746496b84ab41f",
+        "status": "M cli.js\n?? test/extra.test.js",
+        "files": {
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "test/extra.test.js": "3df4fa1f9cfd49837bbf94baf0ef7785dfac239f8e2ad21331dba3aeb9019073",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "5b63136552577a64d788dc3cd4552739d0d60f9e1adb63ec4dfb6932d56fc75d"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 8741,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 78976,
+        "output_tokens": 5899,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsageAsReported": {
+        "DeepSeek-flash[1m]": {
+          "inputTokens": 8741,
+          "outputTokens": 5899,
+          "cacheReadInputTokens": 78976,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.23066799999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "deepseek-flash[1m]",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "permissionDenials": 3
+    },
+    {
+      "agent": "claude",
+      "case": "failure-and-residue",
+      "cliVersion": "Claude Code 2.1.304",
+      "model": "DeepSeek-flash[1m]",
+      "agentProcessExitCode": 0,
+      "agentElapsedSeconds": 38.22,
+      "testExpected": {
+        "passed": 0,
+        "failed": 2,
+        "exitCode": 1
+      },
+      "testOutcomeMatched": true,
+      "testBeforeFullReview": false,
+      "scanRestrictedToChangeScope": false,
+      "stagedResidueIdentified": true,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "fixtureBefore": {
+        "head": "59c553d1a3762751ef1d2510f1a85b8e4f718605",
+        "base": "24d459c7840f5e73f1f2ef905c4bf9f8eab62792",
+        "index": "0e72794dda10c3e42fb6d0d608aa9263773ec930",
+        "status": "M cli.js\n M src/math.js\nAM src/staged.js\n?? debug-output.log\n?? debug.js",
+        "files": {
+          "debug-output.log": "e814e35d1a50abb9ea87a73ea5c44690ac92bd6de2147125186ab803ed4fbb3e",
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "debug.js": "b0d8421955a238f096f846cfb6e36fc5e72199ce149945e3d7d1edf0f4aafd51",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "75cfacb7faac086c50b23ac4b29a709eb8680999e6756f620ca76d42aba07cab",
+          "src/staged.js": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 9700,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 94976,
+        "output_tokens": 5968,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "modelUsageAsReported": {
+        "DeepSeek-flash[1m]": {
+          "inputTokens": 9700,
+          "outputTokens": 5968,
+          "cacheReadInputTokens": 94976,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.24518800000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "deepseek-flash[1m]",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "permissionDenials": 4
+    }
+  ],
+  "normalization": "Temporary fixture paths and user home paths normalized in exported traces; long Codex commands are explicitly truncated. Complete raw process streams remain outside repository."
+}

@@ -21,7 +21,7 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 | Part B B1(a) | 我的 PR 看板设计 | [阅读](part-b/b1/b1-pr-dashboard-design.md) · [设计笔记](part-b/b1/design-notes/b1-design-notes.md) · [制作任务](part-b/b1/make-task.md) |
 | Part B B1(b) | 插件实作与验证 | [源码与说明](part-b/b1/plugin/README.md) · [截图](part-b/b1/screenshots/) · [验收记录](part-b/b1/validation/acceptance.md) |
 | Part B B2(a) | 收工 Skill | [SKILL.md](part-b/b2/end-of-work/SKILL.md) |
-| Part B B2(b)(c) | 固定动作与 AI 判断、Skill 与插件的选择 | [答案](part-b/b2/answer.md) · [整理笔记](part-b/b2/notes.md) · [原始输入](part-b/b2/raw/request.md) |
+| Part B B2(b)(c) | 固定动作与 AI 判断、Skill 与插件的选择 | [答案](part-b/b2/answer.md) · [整理笔记](part-b/b2/notes.md) · [跨 Agent 验证](part-b/b2/validation/agent-execution/README.md) · [原始输入](part-b/b2/raw/request.md) |
 
 ## B1(b) 插件速览
 

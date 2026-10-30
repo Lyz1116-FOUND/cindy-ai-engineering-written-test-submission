@@ -1,0 +1,45 @@
+[
+  {
+    "sequence": 0,
+    "type": "command",
+    "command": "/bin/zsh -lc 'cat <fixture-root>/codex-passing-SKILL.md'",
+    "commandTruncated": false,
+    "exitCode": 0
+  },
+  {
+    "sequence": 1,
+    "type": "command",
+    "command": "/bin/zsh -lc \"pwd; rg --files -g AGENTS.md -g CLAUDE.md -g 'README*' -g package.json -g '*lock*' -g '.github/workflows/*' -g '\"'!node_modules'\"' -g '\"'!'\"\\\\.git'; git rev-parse --show-toplevel; git rev-parse HEAD; git branch --show-current; git status --porcelain=v1 --untracked-files=all; git rev-parse --verify 24d459c7840f5e73f1f2ef905c4bf9f8eab62792\"'^{commit}; git rev-list --count 24d459c7840f5e73f1f2ef905c4bf9f8eab62792..HEAD; git diff --name-status 24d459c7840f5e73f1f2ef905c4bf9f8eab62792 HEAD; git diff --cached --name-status; git diff --name-status; git ls-files --others --exclude-standard'",
+    "commandTruncated": false,
+    "exitCode": 0
+  },
+  {
+    "sequence": 2,
+    "type": "command",
+    "command": "/bin/zsh -lc 'cat <user-home>/.codex/skills/safe-exec/SKILL.md <user-home>/.codex/skills/verification-before-completion/SKILL.md; for p in /AGENTS.md /tmp/AGENTS.md <fixture-root>/AGENTS.md <fixture-root>/codex-passing/AGENTS.md; do if test -f \"$p\"; then printf '\"'\\\\n%s\\\\n' \\\"\"'$p\"; cat \"$p\"; fi; done; cat package.json; rg --files --hidden -g '\"'\"'!.git'\"' -g '\"'!node_modules'\"'\"",
+    "commandTruncated": false,
+    "exitCode": 0
+  },
+  {
+    "sequence": 3,
+    "type": "command",
+    "command": "/bin/zsh -lc 'npm test'",
+    "commandTruncated": false,
+    "exitCode": 0,
+    "testOutput": "\n> test\n> node --test test/*.test.js\n\n✔ fixture negative (0.920167ms)\n✔ adds two inputs (0.9745ms)\n✔ supports zero (0.082ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 118.099958\n"
+  },
+  {
+    "sequence": 4,
+    "type": "command",
+    "command": "/bin/zsh -lc \"git --no-optional-locks log --format='%H %s' 24d459c7840f5e73f1f2ef905c4bf9f8eab62792..HEAD; git --no-optional-locks diff --no-ext-diff --no-textconv --find-renames 24d459c7840f5e73f1f2ef905c4bf9f8eab62792 HEAD --; git --no-optional-locks diff --cached --no-ext-diff --no-textconv --; git --no-optional-locks diff --no-ext-diff --no-textconv --; for p in src/math.js cli.js test/math.test.js test/extra.test.js; do printf '\\\\n%s\\\\n' \\\"\"'$p\"; nl -ba \"$p\"; done; git --no-optional-locks status --porcelain=v1 --untracked-files=all'",
+    "commandTruncated": false,
+    "exitCode": 0
+  },
+  {
+    "sequence": 5,
+    "type": "command",
+    "command": "/bin/zsh -lc \"python3 -B -c 'import subprocess,re,pathlib\nbase=\\\"24d459c7840f5e73f1f2ef905c4bf9f8eab62792\\\"\ndef git(*args):\n p=subprocess.run([\\\"git\\\",\\\"--no-optional-locks\\\",*args],text=True,capture_output=True)\n print(\\\"git \\\"+\\\" \\\".join(args)+\\\" | exit=\\\"+str(p.returncode))\n if p.returncode: raise SystemExit(\\\"Git check failed; scan incomplete\\\")\n return p.stdout\ngit(\\\"merge-base\\\",\\\"--is-ancestor\\\",base,\\\"HEAD\\\")\nparts=[git(\\\"diff\\\",\\\"--no-ext-diff\\\",\\\"--no-textconv\\\",\\\"--unified=0\\\",base,\\\"HEAD\\\",\\\"--\\\"),git(\\\"diff\\\",\\\"--cached\\\",\\\"--no-ext-diff\\\",\\\"--no-textconv\\\",\\\"--unified=0\\\",\\\"--\\\"),git(\\\"diff\\\",\\\"--no-ext-diff\\\",\\\"--no-textconv\\\",\\\"--unified=0\\\",\\\"--\\\")]\nlines=set(); files=set()\n",
+    "commandTruncated": true,
+    "exitCode": 0
+  }
+]

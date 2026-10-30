@@ -1,0 +1,204 @@
+[
+  {
+    "sequence": 0,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue-SKILL.md"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 1,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && pwd && git rev-parse HEAD && git branch --show-current && git status --porcelain=v1",
+      "description": "Show repo HEAD, branch, and status"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 2,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && ls -la && find . -maxdepth 2 -name 'AGENTS.md' -o -maxdepth 2 -name 'package.json' -o -maxdepth 2 -name 'README*' | head -50",
+      "description": "List files and find project docs"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 3,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && cat AGENTS.md && echo '---PACKAGE---' && cat package.json && echo '---FILES---' && ls -la src test",
+      "description": "Read AGENTS.md, package.json, and source tree"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 4,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && git log --oneline 24d459c7840f5e73f1f2ef905c4bf9f8eab62792..HEAD && echo '---COMMIT DIFF STAT---' && git diff --stat 24d459c7840f5e73f1f2ef905c4bf9f8eab62792..HEAD && echo '---STAGED---' && git diff --cached --stat && echo '---UNSTAGED---' && git diff --stat",
+      "description": "Show commits and diff stats since baseline"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 5,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && echo '=== BASELINE..HEAD ===' && git diff 24d459c7840f5e73f1f2ef905c4bf9f8eab62792..HEAD -- . && echo '=== STAGED ===' && git diff --cached -- . && echo '=== UNSTAGED ===' && git diff -- .",
+      "description": "Show full diffs for committed, staged, unstaged changes"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 6,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && for f in debug-output.log debug.js src/staged.js src/math.js cli.js test/math.test.js; do echo \"=== $f ===\"; cat -n \"$f\"; done",
+      "description": "Read untracked and changed files with line numbers"
+    },
+    "toolReportedError": true
+  },
+  {
+    "sequence": 7,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/debug-output.log"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 8,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/debug.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 9,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/src/staged.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 10,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/src/math.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 11,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/cli.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 12,
+    "type": "Read",
+    "input": {
+      "file_path": "<fixture-root>/claude-failure-and-residue/test/math.test.js"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 13,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && time npm test; echo \"EXIT_CODE=$?\"",
+      "description": "Run project test suite and capture exit code and timing",
+      "timeout": 120000
+    },
+    "toolReportedError": true,
+    "testToolResult": "Permission to use Bash has been denied because Claude Code is running in don't ask mode. IMPORTANT: You *may* attempt to accomplish this action using other tools that might naturally be used to accomplish this goal, e.g. using head instead of cat. But you *should not* attempt to work around this denial in malicious ways, e.g. do not use your ability to run tests to execute non-test actions. You should only try to work around this restriction in reasonable ways that do not attempt to bypass the intent behind this denial. If you believe this capability is essential to complete the user's request, STOP and explain to the user what you were trying to do and why you need this permission. Let the user decide how to proceed."
+  },
+  {
+    "sequence": 14,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && npm test",
+      "description": "Run project test suite",
+      "timeout": 120000
+    },
+    "toolReportedError": true,
+    "testToolResult": "Exit code 1\n\n> test\n> node --test test/*.test.js\n\n✖ adds two inputs (4.195625ms)\n✖ supports zero (0.146334ms)\nℹ tests 2\nℹ suites 0\nℹ pass 0\nℹ fail 2\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 123.265709\n\n✖ failing tests:\n\ntest at test/math.test.js:4:1\n✖ adds two inputs (4.195625ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  -1 !== 5\n  \n      at TestContext.<anonymous> (file://<fixture-root>/claude-failure-and-residue/test/math.test.js:4:38)\n      at Test.runInAsyncScope (node:async_hooks:226:14)\n      at Test.run (node:internal/test_runner/test:1201:25)\n      at Test.start (node:internal/test_runner/test:1096:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: -1,\n    expected: 5,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }\n\ntest at test/math.test.js:5:1\n✖ supports zero (0.146334ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n  \n  -7 !== 7\n  \n      at TestContext.<anonymous> (file://<fixture-root>/claude-failure-and-residue/test/math.test.js:5:36)\n      at Test.runInAsyncScope (node:async_hooks:226:14)\n      at Test.run (node:internal/test_runner/test:1201:25)\n      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n      at Test.postRun (node:internal/test_runner/test:1330:19)\n      at Test.run (node:internal/test_runner/test:1258:12)\n      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: -7,\n    expected: 7,\n    operator: 'strictEqual',\n    diff: 'simple'\n  }"
+  },
+  {
+    "sequence": 15,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && rg -n -i --no-heading -e 'debugger' -e 'console\\.(log|debug|trace|dir)' -e '\\.only\\b' -e '\\b(it|test|describe)\\.skip\\b' -e 'TODO|FIXME|XXX|HACK' -e 'temporary|temp[_-]|probe|dummy|placeholder' -e 'localhost|127\\.0\\.0\\.1' -e 'mock' cli.js debug.js debug-output.log src/staged.js src/math.js test/math.test.js; echo \"RG_EXIT=$?\"",
+      "description": "Scan scoped files for debug residue keywords"
+    },
+    "toolReportedError": true
+  },
+  {
+    "sequence": 16,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && git status --porcelain=v1 --untracked-files=all && git diff --check && git diff --cached --check; echo \"CHECK_EXIT=$?\"",
+      "description": "Check full untracked list and whitespace errors"
+    },
+    "toolReportedError": true
+  },
+  {
+    "sequence": 17,
+    "type": "Grep",
+    "input": {
+      "pattern": "debugger|console\\.(log|debug|trace|dir)|\\.only\\b|\\b(it|test|describe)\\.skip\\b|TODO|FIXME|XXX|HACK|temporary|temp[_-]|probe|dummy|placeholder|localhost|127\\.0\\.0\\.1|mock",
+      "path": "<fixture-root>/claude-failure-and-residue",
+      "output_mode": "content",
+      "-i": true,
+      "-n": true,
+      "glob": "!**/.git/**"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 18,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && git status --porcelain=v1 --untracked-files=all",
+      "description": "List all working tree status entries"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 19,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && git grep --cached -n -i -E 'debugger|console\\.(log|debug|trace|dir)|\\.only\\b|(it|test|describe)\\.skip\\b|TODO|FIXME|XXX|HACK|temporary|probe|dummy|placeholder|localhost|127\\.0\\.0\\.1|mock' -- . ':!AGENTS.md'",
+      "description": "Scan staged index content for residue keywords"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 20,
+    "type": "Grep",
+    "input": {
+      "pattern": "staged|from [\"'].*staged",
+      "path": "<fixture-root>/claude-failure-and-residue",
+      "output_mode": "content",
+      "-n": true,
+      "glob": "!**/.git/**"
+    },
+    "toolReportedError": false
+  },
+  {
+    "sequence": 21,
+    "type": "Bash",
+    "input": {
+      "command": "cd <fixture-root>/claude-failure-and-residue && git diff --check && git diff --cached --check",
+      "description": "Check diffs for whitespace errors"
+    },
+    "toolReportedError": false
+  }
+]

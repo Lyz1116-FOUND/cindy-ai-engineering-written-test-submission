@@ -39,4 +39,4 @@ Skill 的文本可以直接审阅和修改，下一次加载时就能采用新�
 - [本次指定的 Skill 底稿](raw/provided-skill-original.md)
 - [整理与修正笔记](notes.md)
 
-本次先由用户提供思路和待润色文件，再由 AI 整理措辞、完善执行细节并做静态检查。未声称已在多个 Agent 上实际验证一致执行。
+本次先由用户提供思路和待润色文件，再由 AI 整理措辞、完善执行细节。随后完成[两个 CLI、四轮实际验证](validation/agent-execution/README.md)：Codex 两轮符合核心执行要求；Claude Code（配置模型为 DeepSeek）能识别失败与残留，但存在顺序和扫描范围偏差。因此已验证可以执行，尚未证明跨 Agent 严格一致；Pi 未测。
