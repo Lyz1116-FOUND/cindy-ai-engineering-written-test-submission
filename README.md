@@ -29,8 +29,21 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 
 安装包（`.cindy`）暂未随仓库发布，可由 Agent 通过宿主 Forge 从 `part-b/b1/plugin/` 源码目录安装。
 
+## B2 收工 Skill 与实际结果
+
+用户说“收工”后，按“定范围 → 跑测试 → 审阅 → 扫描 → 摘要”执行。流程、扫描边界、记录字段和摘要模板固定；具体测试选择、代码用途和失败原因交给 AI 理解。完整文件见 [SKILL.md](part-b/b2/end-of-work/SKILL.md)，设计说明与[最后的结论](part-b/b2/answer.md#最后的结论)见正式答案。
+
+已用 Codex CLI 和 Claude Code 做两轮、共 **8 个独立会话**的实际验证。Claude Code 当前配置的模型为 DeepSeek，不代表 Claude 模型验收；Pi 和自动触发尚未测试。
+
+| 验证阶段 | 结果 |
+| --- | --- |
+| [首次四轮验证](part-b/b2/validation/agent-execution/README.md) | 能运行测试、区分正常与失败、识别暂存区和未跟踪文件中的残留；但 Claude Code 出现先审阅后测试，以及把未改文件计入扫描命中的问题。 |
+| [修订后四轮重测](part-b/b2/validation/agent-retest/README.md) | 加入读取边界、命中准入和阶段记录后，原先顺序与最终命中范围问题在本轮样例中未复现；但仍有阶段记录晚写，以及宣称审阅完成时缺少完整差异阅读证据的问题。 |
+
+目前它能辅助收工，但还不能保证每一步都严格执行，结果仍需人检查。这也可能与设计主要依赖 AI 自觉遵守有关。后续计划用小脚本核对改动清单、扫描范围和测试记录，让 AI 负责理解与解释；该方案尚未实现，不能把 AI 说“完成了”直接当作验收通过。两轮执行前后的样例文件、HEAD、暂存区和 Git 状态均未变化。
+
 ## 提交约定
 
 每个部分分多次提交，commit 信息写明该次添加的内容；提交均带 DCO `Signed-off-by`。`part-b/b1/screenshots/` 内均为裁剪后仅保留插件面板/分析正文的版本。
 
-各题的 raw 保存实际收到的原始材料。B2 已保留题面、用户个人思考及指定的 Skill/答案底稿；整理笔记说明用户与 AI 的分工，正式文件位于 end-of-work/ 和 answer.md。
+各题的 raw 保存实际收到的原始材料。B2 已保留[个人思考原稿](part-b/b2/raw/design-original.md)、[指定的 Skill 底稿](part-b/b2/raw/provided-skill-original.md)、题面和后续修订要求；[整理笔记](part-b/b2/notes.md)说明用户与 AI 的分工，正式文件位于 end-of-work/ 和 answer.md。
