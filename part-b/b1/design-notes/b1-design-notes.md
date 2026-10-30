@@ -1,6 +1,6 @@
 # B1 我的 PR 看板：设计整理与核对笔记
 
-原始想法见 [原稿](../raw/b1-design-original.md)，正式答案见 [B1(a)](../../answers/b1-pr-dashboard-design.md)，交给 Cindy 的制作任务见 [执行文档](../../tasks/cindy-b1-pr-dashboard.md)。本笔记记录完善过程，不代表插件已经实现。
+原始想法见 [原稿](b1-design-original.md)，正式答案见 [B1(a)](../b1-pr-dashboard-design.md)，交给 Cindy 的制作任务见 [执行文档](../make-task.md)。本笔记记录完善过程，不代表插件已经实现。
 
 ## 保留的设计
 

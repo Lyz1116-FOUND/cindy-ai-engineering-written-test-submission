@@ -1,21 +1,21 @@
 # Part 0(c) 提交记录
 
-仓库：[Lyz1116-FOUND/cindy-ai-engineering-written-test](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test)
+仓库：[Lyz1116-FOUND/cindy-ai-engineering-written-test-submission](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission)
 
-本次把 Part 0 已有材料按用途分成三次提交。三次提交均在整理交付时创建，不把提交时间解释成最初的阅读时间。
+Part 0 的答案、阅读笔记和原始材料已分次提交到本仓库。以下记录对应本仓库的真实 commit；归档提交时间不代表最初阅读或产生笔记的时间。
 
-| 顺序 | commit 信息 | 内容 |
+| commit | 提交信息 | 实际内容 |
 | --- | --- | --- |
-| 1 | docs(part0): 保存项目导览和单词卡需求的原始笔记 | notes/raw 中两份未改写的原始 DOCX，以及仓库说明。 |
-| 2 | docs(part0): 添加整理后的阅读笔记、调用链与依据 | notes/整理过 中 a、b 阅读笔记，包含 Markdown 与 Word 版，以及阅读顺序、疑问和依据。 |
-| 3 | docs(part0): 添加项目导览、单词卡方案与提交说明 | answers 中 a、b 正式答案及本说明，更新首页导航。 |
+| [25b023b](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/commit/25b023b621b0d1210f2f1dfecfdcd679bbb713c9) | docs(part0): 添加项目导览与每日单词卡方案 | Part 0(a)、(b) 的 Markdown 答案及对应 Word 文档。 |
+| [9e8b57d](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/commit/9e8b57d4972d71bb6503919d4463f654ce0e113d) | docs(part0): 添加阅读笔记与提交记录说明 | Cindy 阅读笔记、每日单词卡整理笔记、raw/笔记.docx 及本提交说明。 |
+| [6031f65](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/commit/6031f65e5415fc69d3d02d64dcc31e7a2e69dc00) | docs(part0): 归位每日单词卡原始笔记 b笔记.docx | 将每日单词卡原始笔记归入 part0/raw/。 |
 
-实际提交及文件变化以 [GitHub 提交历史](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test/commits/main/) 为准。
+前两次提交已满足“至少分 2 次 commit，commit 信息写清楚每次做了什么”的要求。实际提交及文件变化以[本仓库提交历史](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/commits/main/)为准。
 
 ## 材料边界与 AI 使用
 
 - 原始笔记保留当时的理解；其中未经核验的推测不作为最终结论。整理版说明了关键修正和依据。
 - AI 参与源码检索、调用链与规则的静态核对、文字整理和此次 Git 提交操作。不能将这些工作描述为仅做文字润色。
 - 本次提交的是 Part 0 阅读资料与方案文档。笔记中的 JavaScript 和 manifest 片段是说明用的示例，未作为完整插件实现或运行。
-- 本轮没有启动 Cindy、运行插件、执行项目测试或调用真实模型；不据此声称功能已经可用。
+- Part 0 阅读与方案阶段没有启动 Cindy、运行单词卡插件、执行项目测试或调用真实模型；不据此声称功能已经可用。
 - 阅读依据来自本机 Cindy 源码目录；该目录没有 Git 元数据，因此未记录可确认的上游 commit。笔记中的源码路径相对于 Cindy 源码仓库，而非本答题仓库。

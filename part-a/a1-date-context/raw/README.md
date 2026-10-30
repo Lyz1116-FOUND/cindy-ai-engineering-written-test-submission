@@ -5,4 +5,4 @@
 - 不同意.docx：原始思考及后续补充。
 - 不同意-最终提交版.docx：用户提供的中间版本，原文件名保留；其中还包含 AI 审核建议。
 
-这里的“最终提交版”是原稿文件名，不代表本仓库当前推荐的正式答案。合并后的正式答案位于 answers/A1日期参照问题_最终提交版.docx，Markdown 版为 answers/a1-time-context-answer.md。修正说明单独放在 notes/整理过 中。
+这里的“最终提交版”是原稿文件名，不代表本仓库当前推荐的正式答案。合并后的正式答案见 [Word](../A1日期参照问题_最终提交版.docx) 和 [Markdown](../a1-time-context-answer.md)，修正说明见[阅读笔记](../a1-reading-notes.md)。

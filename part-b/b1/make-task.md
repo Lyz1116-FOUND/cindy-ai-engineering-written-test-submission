@@ -7,10 +7,10 @@
 用户打开看板，即可查看自己在 GitHub 上待处理的 PR 和 CI 状态；点击失败 PR 的“分析 CI”，AI 收到具体证据并实际开始分析。
 
 - Cindy 本地源码参考根目录：`/Users/foundtt/my_cow_horse/cindy-main`。这里只读参考，不为实现此插件修改宿主、权限守卫、系统提示词或协议。
-- 笔试交付仓库：`/Users/foundtt/my_cow_horse/cindy-main/written-test/submission`。
-- 远端：`https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test`。
-- 写代码前的设计答案：`answers/b1-pr-dashboard-design.md`，相对于交付仓库。
-- 插件源码建议放在交付仓库的 `plugins/pr-dashboard/`，截图放 `screenshots/b1/`，实作说明写在插件目录的 `README.md`。先检查实际工作目录、现有文件和 Git 状态，复用已有成果，不覆盖他人改动。
+- 笔试交付仓库：`/Users/foundtt/my_cow_horse/cindy-main/written-test/independent-submission`。
+- 远端：`https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission`。
+- 写代码前的设计答案：`part-b/b1/b1-pr-dashboard-design.md`，相对于交付仓库。
+- 插件源码建议放在交付仓库的 `part-b/b1/plugin/`，截图放 `part-b/b1/screenshots/`，实作说明写在插件目录的 `README.md`。先检查实际工作目录、现有文件和 Git 状态，复用已有成果，不覆盖他人改动。
 - 使用第三方插件标识，例如 `lyz-pr-dashboard`；不要冒用 `cindy-` 官方前缀或 `cindy-github` 身份。
 
 ## 二、先核验宿主版本，再读规则

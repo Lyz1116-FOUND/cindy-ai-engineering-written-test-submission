@@ -17,7 +17,7 @@
 
 首次真实列表返回空（`prs=[]、total=0、complete=true`，2026-10-29T15:05:11Z）——符合当时授权范围内没有自建 open PR 的事实，也顺带验证了「无 PR」不是报错。
 
-为获得真实的成功/失败样本，在交付仓库创建功能分支草稿 [PR #1](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test/pull/1)：workflow 先跑真实语法/入口检查和全部插件测试（Node 20/22），最后一步 `B1 controlled failure sample` **仅在 draft 且正文含 `[B1_CI_FAILURE_SAMPLE]` 标记时** `exit 1`，显式 `continue-on-error:false`。这让我可以在同一个 PR 上反复切换成功/失败状态。
+为获得真实的成功/失败样本，在 GitHub 测试仓库创建功能分支草稿 [PR #1](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test/pull/1)：workflow 先跑真实语法/入口检查和全部插件测试（Node 20/22），最后一步 `B1 controlled failure sample` **仅在 draft 且正文含 `[B1_CI_FAILURE_SAMPLE]` 标记时** `exit 1`，显式 `continue-on-error:false`。这让我可以在同一个 PR 上反复切换成功/失败状态。
 
 固定 head SHA `0f026073…` 的五轮真实切换，看板与 GitHub 实际状态逐轮对照：
 
