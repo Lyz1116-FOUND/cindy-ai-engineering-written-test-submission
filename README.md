@@ -20,7 +20,7 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 | Part A A2 | 排查报告审阅 | [答案](part-a/a2-report-review/a2-report-review-answer.md) · [下载](part-a/a2-report-review/A2排查报告审阅_最终提交版.docx) · [笔记](part-a/a2-report-review/a2-reading-notes.md) |
 | Part B B1(a) | 我的 PR 看板设计 | [阅读](part-b/b1/b1-pr-dashboard-design.md) · [设计笔记](part-b/b1/design-notes/b1-design-notes.md) · [制作任务](part-b/b1/make-task.md) |
 | Part B B1(b) | 插件实作与验证 | [源码与说明](part-b/b1/plugin/README.md) · [截图](part-b/b1/screenshots/) · [验收记录](part-b/b1/validation/acceptance.md) |
-| Part B B2(a) | 收工 Skill | [SKILL.md](part-b/b2/skills/wrap-up/SKILL.md) |
+| Part B B2(a) | 收工 Skill | [SKILL.md](part-b/b2/end-of-work/SKILL.md) |
 | Part B B2(b)(c) | 固定动作与 AI 判断、Skill 与插件的选择 | [答案](part-b/b2/answer.md) · [整理笔记](part-b/b2/notes.md) · [原始输入](part-b/b2/raw/request.md) |
 
 ## B1(b) 插件速览
@@ -33,4 +33,4 @@ part-b/b2/      Part B B2：收工 Skill、设计说明、整理笔记与原始�
 
 每个部分分多次提交，commit 信息写明该次添加的内容；提交均带 DCO `Signed-off-by`。`part-b/b1/screenshots/` 内均为裁剪后仅保留插件面板/分析正文的版本。
 
-各题的 raw 保存实际收到的原始材料。B2 当前只有题面与用户归档要求，没有作答者个人思考稿；AI 起草内容存放在整理笔记和正式答案中，不冒充个人原稿。
+各题的 raw 保存实际收到的原始材料。B2 已保留题面、用户个人思考及指定的 Skill/答案底稿；整理笔记说明用户与 AI 的分工，正式文件位于 end-of-work/ 和 answer.md。
