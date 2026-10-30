@@ -1,0 +1,404 @@
+{
+  "date": "2026-10-30",
+  "skillSHA256": "ff81c27b249345c1dda07bdb6becd85a33497d39625e68a26c33b2eea24119f4",
+  "previousSkillSHA256": "7c587e6a20ba399ca589062a49fc5207a69bb07059bd51812f5798dd2f6972de",
+  "allRequirementsPassed": false,
+  "cases": [
+    {
+      "agent": "codex",
+      "case": "failure-and-residue",
+      "meta": {
+        "agent": "codex",
+        "case": "failure-and-residue",
+        "args": [
+          "codex",
+          "exec",
+          "--ephemeral",
+          "--sandbox",
+          "read-only",
+          "--json",
+          "--color",
+          "never",
+          "-C",
+          "<fixture-root>/codex-failure-and-residue",
+          "-o",
+          "<fixture-root>/codex-failure-and-residue.final.txt",
+          "-"
+        ],
+        "startedUnix": 1793332439.392044,
+        "exitCode": 0,
+        "elapsedSeconds": 126.76
+      },
+      "modelUsageAsReported": null,
+      "usageAsReported": {
+        "input_tokens": 229315,
+        "cached_input_tokens": 208384,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3792,
+        "reasoning_output_tokens": 765
+      },
+      "permissionDenialCount": 0,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "before": {
+        "agent": "codex",
+        "case": "failure-and-residue",
+        "directory": "/private<fixture-root>/codex-failure-and-residue",
+        "base": "7cba9c0daeed3acc7f14d12938289d5256b1e7ac",
+        "head": "559c0d0b0b7a88b4ec7c251617b97d93909057dd",
+        "status": "M cli.js\n M src/math.js\nAM src/staged.js\n?? debug-output.log\n?? debug.js",
+        "index": "0e72794dda10c3e42fb6d0d608aa9263773ec930",
+        "files": {
+          "debug-output.log": "e814e35d1a50abb9ea87a73ea5c44690ac92bd6de2147125186ab803ed4fbb3e",
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "debug.js": "b0d8421955a238f096f846cfb6e36fc5e72199ce149945e3d7d1edf0f4aafd51",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "75cfacb7faac086c50b23ac4b29a709eb8680999e6756f620ca76d42aba07cab",
+          "src/staged.js": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29"
+        }
+      },
+      "testBeforeFullReview": true,
+      "finalMatchesRestrictedScanScope": true,
+      "fullHunkReviewEvidenceBeforeReviewCompletion": false,
+      "reviewCompletionRecordBeforeScanTools": true,
+      "hasFinal": true
+    },
+    {
+      "agent": "claude",
+      "case": "passing",
+      "meta": {
+        "agent": "claude",
+        "case": "passing",
+        "args": [
+          "claude",
+          "--safe-mode",
+          "-p",
+          "--verbose",
+          "--output-format",
+          "stream-json",
+          "--no-session-persistence",
+          "--permission-mode",
+          "dontAsk",
+          "--max-budget-usd",
+          "3",
+          "--tools",
+          "Bash,Read,Glob,Grep",
+          "--allowedTools",
+          "Read",
+          "Glob",
+          "Grep",
+          "Bash(git *)",
+          "Bash(npm test*)",
+          "Bash(node --test *)",
+          "Bash(rg *)",
+          "Bash(cat *)",
+          "Bash(pwd)",
+          "Bash(ls *)",
+          "Bash(nl *)",
+          "Bash(find *)",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}"
+        ],
+        "startedUnix": 1793332830.293737,
+        "exitCode": 0,
+        "elapsedSeconds": 25.79
+      },
+      "modelUsageAsReported": {
+        "DeepSeek-flash[1m]": {
+          "inputTokens": 9147,
+          "outputTokens": 3518,
+          "cacheReadInputTokens": 62464,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.16491699999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "deepseek-flash[1m]",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 9147,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 62464,
+        "output_tokens": 3518,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "permissionDenialCount": 3,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "before": {
+        "agent": "claude",
+        "case": "passing",
+        "directory": "/private<fixture-root>/claude-passing",
+        "base": "7cba9c0daeed3acc7f14d12938289d5256b1e7ac",
+        "head": "559c0d0b0b7a88b4ec7c251617b97d93909057dd",
+        "status": "M cli.js\n?? test/extra.test.js",
+        "index": "705ae4aa5fb21964ea7c2db9e5746496b84ab41f",
+        "files": {
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "test/extra.test.js": "3df4fa1f9cfd49837bbf94baf0ef7785dfac239f8e2ad21331dba3aeb9019073",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "5b63136552577a64d788dc3cd4552739d0d60f9e1adb63ec4dfb6932d56fc75d"
+        }
+      },
+      "testBeforeFullReview": true,
+      "finalMatchesRestrictedScanScope": true,
+      "fullHunkReviewEvidenceBeforeReviewCompletion": true,
+      "reviewCompletionRecordBeforeScanTools": false,
+      "hasFinal": true
+    },
+    {
+      "agent": "claude",
+      "case": "failure-and-residue",
+      "meta": {
+        "agent": "claude",
+        "case": "failure-and-residue",
+        "args": [
+          "claude",
+          "--safe-mode",
+          "-p",
+          "--verbose",
+          "--output-format",
+          "stream-json",
+          "--no-session-persistence",
+          "--permission-mode",
+          "dontAsk",
+          "--max-budget-usd",
+          "3",
+          "--tools",
+          "Bash,Read,Glob,Grep",
+          "--allowedTools",
+          "Read",
+          "Glob",
+          "Grep",
+          "Bash(git *)",
+          "Bash(npm test*)",
+          "Bash(node --test *)",
+          "Bash(rg *)",
+          "Bash(cat *)",
+          "Bash(pwd)",
+          "Bash(ls *)",
+          "Bash(nl *)",
+          "Bash(find *)",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}"
+        ],
+        "startedUnix": 1793332856.0819478,
+        "exitCode": 0,
+        "elapsedSeconds": 35.28
+      },
+      "modelUsageAsReported": {
+        "DeepSeek-flash[1m]": {
+          "inputTokens": 10068,
+          "outputTokens": 5424,
+          "cacheReadInputTokens": 89856,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.230868,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "deepseek-flash[1m]",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 10068,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 89856,
+        "output_tokens": 5424,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "permissionDenialCount": 2,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "before": {
+        "agent": "claude",
+        "case": "failure-and-residue",
+        "directory": "/private<fixture-root>/claude-failure-and-residue",
+        "base": "fc1403544714f2963473834e604cc350514d7428",
+        "head": "9cd6ccae89174b36bfe536a7eef63f47a6275e1f",
+        "status": "M cli.js\n M src/math.js\nAM src/staged.js\n?? debug-output.log\n?? debug.js",
+        "index": "0e72794dda10c3e42fb6d0d608aa9263773ec930",
+        "files": {
+          "debug-output.log": "e814e35d1a50abb9ea87a73ea5c44690ac92bd6de2147125186ab803ed4fbb3e",
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "debug.js": "b0d8421955a238f096f846cfb6e36fc5e72199ce149945e3d7d1edf0f4aafd51",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "75cfacb7faac086c50b23ac4b29a709eb8680999e6756f620ca76d42aba07cab",
+          "src/staged.js": "5d8f65d2774e206bc9f7a7a4ad39ca2dc563b5c31e46ab57ef4874961237ce29"
+        }
+      },
+      "testBeforeFullReview": true,
+      "finalMatchesRestrictedScanScope": true,
+      "fullHunkReviewEvidenceBeforeReviewCompletion": true,
+      "reviewCompletionRecordBeforeScanTools": true,
+      "hasFinal": true
+    },
+    {
+      "agent": "claude",
+      "case": "unchanged-keywords",
+      "meta": {
+        "agent": "claude",
+        "case": "unchanged-keywords",
+        "args": [
+          "claude",
+          "--safe-mode",
+          "-p",
+          "--verbose",
+          "--output-format",
+          "stream-json",
+          "--no-session-persistence",
+          "--permission-mode",
+          "dontAsk",
+          "--max-budget-usd",
+          "3",
+          "--tools",
+          "Bash,Read,Glob,Grep",
+          "--allowedTools",
+          "Read",
+          "Glob",
+          "Grep",
+          "Bash(git *)",
+          "Bash(npm test*)",
+          "Bash(node --test *)",
+          "Bash(rg *)",
+          "Bash(cat *)",
+          "Bash(pwd)",
+          "Bash(ls *)",
+          "Bash(nl *)",
+          "Bash(find *)",
+          "--strict-mcp-config",
+          "--mcp-config",
+          "{\"mcpServers\":{}}"
+        ],
+        "startedUnix": 1793332891.3647292,
+        "exitCode": 0,
+        "elapsedSeconds": 27.9
+      },
+      "modelUsageAsReported": {
+        "DeepSeek-flash[1m]": {
+          "inputTokens": 9128,
+          "outputTokens": 3809,
+          "cacheReadInputTokens": 74880,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.178305,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "deepseek-flash[1m]",
+          "provider": "firstParty",
+          "costBasis": "unknown"
+        }
+      },
+      "usageAsReported": {
+        "input_tokens": 9128,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 74880,
+        "output_tokens": 3809,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard",
+        "fallback_credit": null
+      },
+      "permissionDenialCount": 3,
+      "integrity": {
+        "filesUnchanged": true,
+        "headUnchanged": true,
+        "indexUnchanged": true,
+        "statusUnchanged": true
+      },
+      "before": {
+        "agent": "claude",
+        "case": "unchanged-keywords",
+        "directory": "/private<fixture-root>/claude-unchanged-keywords",
+        "base": "d1f93dd49e3a0b1480a815bc0394b60d56aa1df3",
+        "head": "d2aa8d04d2295e8a0d7812e4136cc30874402508",
+        "status": "M cli.js\n?? test/extra.test.js",
+        "index": "de7a1dff1a409ecfb89518ea5616a1d741123e49",
+        "files": {
+          "legacy.js": "50066c5752a1566406c01bdfd8748758eeb7efbff3ff0366fd2d10e2996fc3d1",
+          "package.json": "27fab6e8de15894a7f6b47ad187bb38b682f30562d015e8e524da100507fe9cc",
+          "cli.js": "4aba4249286fca9a1c9baa5fddb6a0ed87020ad1bbd8d3786e77ee6750ac41c6",
+          "AGENTS.md": "f43b31f297ef802122328905d59219fcadc30a96d5399987703007e3a5f1d1be",
+          "test/extra.test.js": "3df4fa1f9cfd49837bbf94baf0ef7785dfac239f8e2ad21331dba3aeb9019073",
+          "test/math.test.js": "27469982e23c69e3328112b67ba76db2dc0f8ca53c04830052f518d13d66ce81",
+          "src/math.js": "5b63136552577a64d788dc3cd4552739d0d60f9e1adb63ec4dfb6932d56fc75d"
+        }
+      },
+      "testBeforeFullReview": true,
+      "finalMatchesRestrictedScanScope": true,
+      "fullHunkReviewEvidenceBeforeReviewCompletion": true,
+      "reviewCompletionRecordBeforeScanTools": true,
+      "hasFinal": true
+    }
+  ],
+  "notes": "Explicit Skill loading; Pi and automatic discovery not tested. Paths normalized; complete internal thinking streams not archived."
+}
