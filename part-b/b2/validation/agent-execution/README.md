@@ -41,7 +41,7 @@ Claude 正常轮的工具未向回答暴露退出码，回答按 Skill 写“未
 - 正常轮：[Codex 回答](codex-passing.final.md) / [调用顺序](codex-passing.trace.json)；[Claude Code 回答](claude-passing.final.md) / [调用顺序](claude-passing.trace.json)。
 - 故障轮：[Codex 回答](codex-failure-and-residue.final.md) / [调用顺序](codex-failure-and-residue.trace.json)；[Claude Code 回答](claude-failure-and-residue.final.md) / [调用顺序](claude-failure-and-residue.trace.json)。
 
-调用顺序按真实事件流提取，序号从 0 起；Claude 的 tool-call 可能被拒绝，是否实际执行应结合结果字段与拒绝记录判断。部分长 Codex 命令明确标注截断，临时根目录和用户目录作了占位归一化。测试输出和最终回答保留；完整原始 CLI 事件流留在临时验证目录，未把内部思考流、全局规则原文或冗长初始化日志提交到仓库。
+调用顺序按真实事件流提取，序号从 0 起；Claude 的 tool-call 可能被拒绝，是否实际执行应结合结果字段与拒绝记录判断。部分长 Codex 命令明确标注截断，临时根目录和用户目录作了占位归一化，回答中的行尾换行空格已移除。测试输出和最终回答保留；完整原始 CLI 事件流留在临时验证目录，未把内部思考流、全局规则原文或冗长初始化日志提交到仓库。
 
 逐轮独立对照执行前后文件 SHA-256、HEAD、索引 tree 和 porcelain 状态，四项均一致。这里证明样例内容及 Git 状态未被改变，不表示 CLI 没有在自身临时/缓存目录写入运行日志。只读沙箱及工具白名单也参与了约束，不能把全部效果归功于提示词。
 
