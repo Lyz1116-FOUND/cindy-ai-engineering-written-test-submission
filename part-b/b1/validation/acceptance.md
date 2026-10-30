@@ -1,8 +1,18 @@
-# B1(b) 验收笔记（草稿·待作者审核后发布）
+# B1(b) 验收笔记
 
-> 本篇是按实际验证路径重写的验收笔记，整合并取代 acceptance.md / ci-hardening.md / release-1.0.1.md 的叙事结构；事实与回执均取自这三份原始记录，未新增未发生的声明。审核通过后替换或并存均可。
+> 本篇按实际验证路径整合了原始三份验收文档的叙事与事实；分项原始记录保留在同目录各回执 JSON 与 real-ai-analysis.md、host-verification.md 中。
 
-日期：2026-10-29 ～ 2026-10-30（Asia/Tokyo）。宿主 Cindy 0.1.120（macOS，Dark 模式实测）。
+日期：2026-10-29 ～ 2026-10-30（Asia/Tokyo）。宿主 Cindy 0.1.120（macOS）。
+
+## 版本与证据对照
+
+| 版本 | 内容 | 证据状态 |
+| --- | --- | --- |
+| 1.0.0 | 首版交付（21 项测试） | 安装、面板、按钮交接、AI 闭环均已实测；旧包与哈希归档为历史 |
+| 1.0.1 | CI 修复 + 宿主无 code 错误兼容（53 项测试） | Forge 原位更新安装；面板实机闭环（旧仓库 PR #2，证据 SHA `f80d6b44ba2f`）；包 SHA-256 `0c10653b…e77c61ec` |
+| 1.0.2 | 视觉优化（徽标系统 + 卡片层次，测试数不变） | Forge 原位更新安装（配置数据保留）；实机闭环见第 4 节；包 SHA-256 `63da87be…a02420648` |
+
+截图：01–04 号摄于 1.0.1 及更早版本；**05 号为 1.0.2 面板实拍**。
 
 ## 0. 背景与验证方法
 
@@ -69,15 +79,25 @@
 - 宿主实际构建 commit `b3dd843…` 官方 API 查询 422、tag `v0.1.120` 为不同 commit；安装资源静态核验有记录，公开核验缺口如实保留。
 - 首轮 AI 读取调试规范时触发宿主默认权限确认，确认后完成；插件未替用户提权。
 
-## 4. 测试与证据索引
+## 4. 1.0.2 实机闭环（最终包）
 
-- 自动化测试演进：21（首版）→ 24 → 43（真实多轮前）→ 52（历史选择回归）→ **53（宿主无 code 兼容）**，`npm test`/`npm run check` 全绿，CI Node 20/22。
+1.0.2 仅改面板视觉（panel.css/panel.js），数据层与交接逻辑不变。Forge 原位更新安装（配置数据保留）后，先遇一次偶发 `fetch failed`（重试成功，见第 3 节杂项），随后完成完整闭环：
+
+- 载具：新仓库草稿 [PR #1](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/pull/1)（draft + 正文受控标记）。CI 经 workflow_dispatch 派发（该仓库 pull_request 事件被 GitHub 静默丢弃，0 run；main 的守卫不变）：run `41029691351`，Node 20/22 两 job 的 53 项测试全部通过，仅第 6 步受控样本 `exit 1`。
+- 面板：刷新返回 1/1 条，红色「× 失败」徽标、Draft 徽章、卡片新视觉均正确显示（截图 `05-real-1.0.2-closed-loop.png`）。
+- 按钮交接：点击「分析 CI」，插件采集证据并派发任务 taskId `04fb2aee-213c-4a36-91dd-c51d3d199e1b`、runId `e0d9d70d-8bfe-49cd-a816-b0b2c0ed9940`；证据 head SHA `f15522a879cee11a109ffe2ba3326d30cb9d3e25` 与 PR head 一致，日志脱敏截断、`missing:[]`。
+- AI 完成分析（2026-10-30T08:59:00Z final_answer）：结论正确识别受控失败样例，引用 run/job/step 与日志行号，并如实列出证据缺口；未修改文件、未合并、未重跑 CI。
+- 回执：[release-1.0.2-controlled-run.json](release-1.0.2-controlled-run.json)。
+
+## 5. 测试与证据索引
+
+- 自动化测试演进：21（首版）→ 24 → 43（真实多轮前）→ 52（历史选择回归）→ **53（宿主无 code 兼容；1.0.2 视觉版同数）**，`npm test`/`npm run check` 全绿，CI Node 20/22。
 - 说明：五轮真实场景执行时是 43 项测试版本；52/53 项版本另有远端 checks 与真实 API 快照回放记录，不混称。
-- 截图（已裁剪隐私区域）：01 看板真实列表、02 按钮交接（taskId/runId）、03 AI 分析输出、04 最终包闭环。
-- 结构化回执：`live-receipt.json`、`ci-hardening-receipt.json`、`forge-receipts.json`、`forge-1.0.1-receipts.json`、`installed-1.0.1-ci.json`、`release-1.0.1-controlled-run.json`。
-- 安装包：1.0.1 最终包 SHA-256 `0c10653b…e77c61ec`（`artifacts/b1/package.sha256`）；1.0.0 包与哈希归档为历史。
+- 截图：01–04 摄于 1.0.1 及更早版本（均已裁剪为仅保留面板/分析正文）；05 为 **1.0.2 面板实拍**（新视觉 + 已受理状态）。
+- 结构化回执：`live-receipt.json`、`ci-hardening-receipt.json`、`forge-receipts.json`、`forge-1.0.1-receipts.json`、`installed-1.0.1-ci.json`、`release-1.0.1-controlled-run.json`、`release-1.0.2-controlled-run.json`。
+- 安装包：1.0.1 包 SHA-256 `0c10653b…e77c61ec`（旧仓库 artifacts 归档）；1.0.2 包 SHA-256 `63da87be…a02420648`（视觉优化版）；1.0.0 包与哈希归档为历史。
 
-## 5. 未验证与限制（如实保留）
+## 6. 未验证与限制（如实保留）
 
 - 宿主 **Light 模式**未实机目检（离线浏览器验证过语义变量与 320px，不等同宿主实测）。
 - **跨应用重启**后的最终对账未实测；离线测试覆盖同键恢复与不确定不重发。
