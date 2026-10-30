@@ -29,7 +29,7 @@ final-ai-use/  最后一题：AI 使用经历、用量与不确定性
 
 「我的 PR 看板」为 Cindy 第三方插件（`lyz-pr-dashboard` v1.0.2）：右侧栏展示当前 PAT 授权内我创建的 open PR 与 CI 状态；点击失败 PR 的「分析 CI」自动采集该 head SHA 的失败证据并交给 AI 分析。53 项自动化测试，本地复跑通过；CI 配置覆盖 Node 20/22，见 [.github/workflows/pr-dashboard.yml](.github/workflows/pr-dashboard.yml)。
 
-已提供 [1.0.2 安装包](part-b/b1/plugin/lyz-pr-dashboard-1.0.2.cindy)。新版调整了 CI 徽标和卡片层次；尚未安装到 Cindy，双主题预览不能代替新版实机验收。包哈希、源码一致性及验证范围见 [1.0.2 交付核对](part-b/b1/validation/release-1.0.2.md)。此前 1.0.1 的真实运行截图和闭环记录继续保留，不作为 1.0.2 已安装的证明。
+已提供 [1.0.2 安装包](part-b/b1/plugin/lyz-pr-dashboard-1.0.2.cindy)，并已通过 Forge 原位更新安装、完成 Dark 模式实机闭环。截图 01–04 属于此前版本；[截图 05](part-b/b1/screenshots/05-real-1.0.2-closed-loop.png)展示新版视觉及“已受理”状态，随后分析完成由[任务回执及 AI 最终回答](part-b/b1/validation/release-1.0.2-controlled-run.json)证明。包哈希、源码一致性及验证范围见 [1.0.2 交付核对](part-b/b1/validation/release-1.0.2.md)。宿主 Light 模式与跨应用重启恢复仍未实测。
 
 ## B2 收工 Skill 与实际结果
 

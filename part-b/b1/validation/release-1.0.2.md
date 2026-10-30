@@ -17,7 +17,7 @@
 
 ## 运行边界
 
-本文初稿写于安装前，记"尚未安装"。**此后（2026-10-30）1.0.2 已通过 Forge 原位更新安装到用户 Cindy**（`action:updated`，配置与数据保留），并完成实机闭环验收：面板刷新 1/1 条、失败徽标与 Draft 徽章正确显示、点击「分析 CI」派发任务（taskId `04fb2aee-…`、runId `e0d9d70d-…`），证据 SHA `f15522a879ce` 与 PR head 一致，AI 已输出 final_answer。详见[验收记录](acceptance.md)第 4 节与 [release-1.0.2-controlled-run.json](release-1.0.2-controlled-run.json)。
+**2026-10-30，1.0.2 已通过 Forge 原位更新安装到用户 Cindy**（`action:updated`，配置与数据保留），并完成实机闭环验收：面板刷新 1/1 条、失败徽标与 Draft 徽章正确显示、点击「分析 CI」派发任务（taskId `04fb2aee-…`、runId `e0d9d70d-…`），证据 SHA `f15522a879ce` 与 PR head 一致，截图 05 记录的是“已受理 · 等待执行”状态；AI 随后输出 final_answer，完成情况由任务回执证明。详见[验收记录](acceptance.md)第 4 节与 [release-1.0.2-controlled-run.json](release-1.0.2-controlled-run.json)。
 
 仍未验证项：宿主 Light 模式目检、跨应用重启恢复。
 

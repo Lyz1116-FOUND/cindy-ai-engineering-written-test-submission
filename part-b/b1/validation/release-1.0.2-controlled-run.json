@@ -16,7 +16,7 @@
   },
   "ciAtAnalysis": {
     "runId": 41029691351,
-    "event": "workflow_dispatch（该仓库 pull_request 事件被 GitHub 静默丢弃；验证分支临时允许 dispatch 派发，main 守卫不变）",
+    "event": "workflow_dispatch",
     "headSha": "f15522a879cee11a109ffe2ba3326d30cb9d3e25",
     "jobs": [
       {
@@ -39,7 +39,8 @@
       }
     ],
     "logEvidence": "两份日志 L423–424 / L472–473：受控样本声明 + Process completed with exit code 1；truncated:true、redacted:true",
-    "verifiedIndependently": "gh api runs/41029691351/jobs：两 job 仅 step #6 failure，测试步骤全部 success"
+    "verifiedIndependently": "gh api runs/41029691351/jobs：两 job 仅 step #6 failure，测试步骤全部 success",
+    "eventObservation": "多次操作未观察到 pull_request 工作流运行，原因未确认；本次在验证分支通过 workflow_dispatch 完成验证，main 的守卫不变。"
   },
   "aiFinalAnswer": "当前证据最支持“受控失败样例触发 CI 失败”，尚不足以认定插件本身存在缺陷。\n\n**已有证据**\n\n所给资料对应 PR #1 的 head SHA：`f15522a879cee11a109ffe2ba3326d30cb9d3e25`，run `41029691351`，attempt `1`。\n\n| Check / job | 失败步骤 | 日志证据 |\n|---|---|---|\n| plugin (20) · job 123976153999 | 第 6 步 B1 controlled failure sample | 第 423 行声明该步骤故意失败以验证证据采集和 AI 交接；第 424 行记录退出码 1 |\n| plugin (22) · job 123976154393 | 第 6 步 B1 controlled failure sample | 第 472 行出现相同声明；第 473 行记录退出码 1 |\n\n**可能原因**\n\n两个 job 的失败位置和诊断一致，支持共同的受控失败步骤导致检查变红。日志中的“故意失败”仍需同一 SHA 的 workflow 和脚本佐证。\n\n本次仅有一次 run attempt，不能判定为 flaky；日志声称前面的插件检查独立，也不能证明那些检查已经通过。\n\n**下一步核验**\n\n1. 只读查看上述 SHA 的 workflow 及调用脚本，确认第 6 步的触发条件、实际命令和退出逻辑。\n2. 核对两个 job 前序步骤的完整状态及测试结果，判断是否同时存在其他失败。\n3. 对照该步骤的设计目的，确认它是否预期让整个检查失败。\n\n证据缺口：两份日志均已截断、脱敏，check 输出为空，未提供 workflow 源码及前序步骤结果。以上结论仅依据所给快照，未修改文件、合并或重跑 CI。",
   "scope": "1.0.2 最终包实机闭环回执与 AI final answer 原文摘录；任务由面板按钮经宿主普通任务接口派发，未修改任何文件。"

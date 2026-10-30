@@ -6,6 +6,6 @@
 2. `02-real-ci-handoff-dark.png`：点击「分析 CI」后的按钮交接面板：证据 SHA、taskId/runId 与 AI 运行状态。
 3. `03-real-ai-analysis-dark.png`：AI 分析任务内的输出（含对 workflow 源码的只读核验过程）；已裁去底部输入框、模型选择器与用量栏。
 4. `04-final-1.0.1-closed-loop.png`：1.0.1 面板闭环验收——刷新 2/2 条、「分析已完成」、证据 SHA `f80d6b44ba2f` 与独立 GitHub API 核验一致；仅插件面板（旧仓库 PR #2）。
-5. `05-real-1.0.2-closed-loop.png`：**1.0.2 视觉优化版面板实拍**——新仓库 PR #1、红色失败徽标、Draft 徽章、卡片新视觉、「已受理 · 等待执行」与证据 SHA `f15522a879ce`；task `04fb2aee…` 已完成分析（回执见 validation/release-1.0.2-controlled-run.json）。
+5. `05-real-1.0.2-closed-loop.png`：**1.0.2 视觉优化版面板实拍**——新仓库 PR #1、红色失败徽标、Draft 徽章、卡片新视觉、「已受理 · 等待执行」与证据 SHA `f15522a879ce`。截图只证明当时的面板与交接受理状态；task `04fb2aee…` 随后完成分析，由[任务回执及 AI 最终回答](../validation/release-1.0.2-controlled-run.json)证明。
 
 图中保留的 `Lyz1116-FOUND/cindy-ai-engineering-written-test` 为公开测试仓库名，taskId/runId 为随机标识，无隐私内容。

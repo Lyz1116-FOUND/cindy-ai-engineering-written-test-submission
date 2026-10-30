@@ -83,8 +83,8 @@
 
 1.0.2 仅改面板视觉（panel.css/panel.js），数据层与交接逻辑不变。Forge 原位更新安装（配置数据保留）后，先遇一次偶发 `fetch failed`（重试成功，见第 3 节杂项），随后完成完整闭环：
 
-- 载具：新仓库草稿 [PR #1](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/pull/1)（draft + 正文受控标记）。CI 经 workflow_dispatch 派发（该仓库 pull_request 事件被 GitHub 静默丢弃，0 run；main 的守卫不变）：run `41029691351`，Node 20/22 两 job 的 53 项测试全部通过，仅第 6 步受控样本 `exit 1`。
-- 面板：刷新返回 1/1 条，红色「× 失败」徽标、Draft 徽章、卡片新视觉均正确显示（截图 `05-real-1.0.2-closed-loop.png`）。
+- 载具：新仓库草稿 [PR #1](https://github.com/Lyz1116-FOUND/cindy-ai-engineering-written-test-submission/pull/1)（draft + 正文受控标记）。CI 经 workflow_dispatch 派发（多次操作未观察到 pull_request 工作流运行，原因未确认；本次在验证分支通过手动派发完成验证，main 的守卫不变）：run `41029691351`，Node 20/22 两 job 的 53 项测试全部通过，仅第 6 步受控样本 `exit 1`。
+- 面板：刷新返回 1/1 条，红色「× 失败」徽标、Draft 徽章、卡片新视觉均正确显示。截图 `05-real-1.0.2-closed-loop.png` 摄于“已受理 · 等待执行”阶段，仅证明新版面板与交接受理状态；随后分析完成由任务回执及 AI final_answer 证明。
 - 按钮交接：点击「分析 CI」，插件采集证据并派发任务 taskId `04fb2aee-213c-4a36-91dd-c51d3d199e1b`、runId `e0d9d70d-8bfe-49cd-a816-b0b2c0ed9940`；证据 head SHA `f15522a879cee11a109ffe2ba3326d30cb9d3e25` 与 PR head 一致，日志脱敏截断、`missing:[]`。
 - AI 完成分析（2026-10-30T08:59:00Z final_answer）：结论正确识别受控失败样例，引用 run/job/step 与日志行号，并如实列出证据缺口；未修改文件、未合并、未重跑 CI。
 - 回执：[release-1.0.2-controlled-run.json](release-1.0.2-controlled-run.json)。
