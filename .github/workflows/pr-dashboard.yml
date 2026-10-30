@@ -1,0 +1,35 @@
+name: PR dashboard checks
+on:
+  pull_request:
+    paths:
+      - 'part-b/b1/plugin/**'
+      - '.github/workflows/pr-dashboard.yml'
+    types: [opened, synchronize, reopened, edited, ready_for_review, converted_to_draft]
+permissions:
+  contents: read
+jobs:
+  plugin:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Check plugin entry points
+        working-directory: part-b/b1/plugin
+        run: npm run check
+      - name: Test PR and CI handoff behavior
+        working-directory: part-b/b1/plugin
+        run: npm test
+      # Explicit, opt-in live fixture for B1 handoff acceptance. Real tests above always run.
+      # Keep the marker in a draft PR body only while collecting this sample, then remove it.
+      - name: B1 controlled failure sample
+        if: github.event.pull_request.draft == true && contains(github.event.pull_request.body, '[B1_CI_FAILURE_SAMPLE]')
+        continue-on-error: false
+        run: |
+          echo '::error::B1 controlled CI failure sample: this step intentionally fails to verify evidence collection and AI handoff. Plugin checks/tests above are independent.'
+          exit 1

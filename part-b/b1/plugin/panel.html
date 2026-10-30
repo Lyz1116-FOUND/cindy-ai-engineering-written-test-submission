@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我的 PR 看板</title><link rel="stylesheet" href="panel.css"></head>
+<body><main>
+  <div class="toolbar"><div><p class="eyebrow">GITHUB · 待处理</p><p id="scope" class="hint">授权范围内，我创建且仍打开的 PR</p></div><button id="refresh" type="button">刷新</button></div>
+  <p id="updated" class="hint">尚未加载</p>
+  <div id="notice" role="status" aria-live="polite"></div>
+  <div id="summary" class="summary" aria-label="CI 概览"></div>
+  <label class="search-label" for="search">筛选仓库或 PR</label><input type="search" id="search" placeholder="输入仓库名、标题或编号" autocomplete="off">
+  <div id="list" aria-label="我的 PR 列表"></div>
+  <div id="orphans"></div>
+  <details class="help"><summary>范围与 CI 状态如何计算</summary><p>当前 GitHub 凭证可访问的、由我创建且仍打开的 PR。搜索最多 1000 条；遇上限或部分失败会注明不完整。</p><p>失败优先；数据完整时才判断运行中、无检查或全部通过。取消、跳过、中立、过期与未知结论单独保留，不算通过。原始结论可在 PR 详情中查看。</p><p>分析前重新收集并复核 head SHA。AI 只分析；不会自动修改代码、合并 PR 或重跑 CI。任务可在 Cindy 左侧任务列表中查看和停止。</p></details>
+</main><script type="module" src="panel.js"></script></body></html>

@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="panel.css"><style>body{background:transparent} main{padding:12px} label{display:block;margin-bottom:6px}.settings-hint{margin-top:12px}</style></head>
+<body><main>
+<p id="saved" role="status">正在读取凭证保存状态…</p>
+<form id="credential"><label for="pat">GitHub Personal Access Token</label><input id="pat" type="password" autocomplete="off" spellcheck="false" placeholder="仅在此输入，不要发到聊天中" required><div class="actions"><button type="submit">保存 / 替换</button><button id="clear" type="button">清除凭证</button></div></form>
+<p class="hint settings-hint">凭证由 Cindy 加密保管，只注入 api.github.com。插件只查询已保存状态，保存后不能读回明文。</p>
+<p class="hint">Fine-grained PAT：选择目标仓库，授予 Pull requests、Checks、Commit statuses、Actions 的读取权限，按组织要求完成审批 / SSO。授权范围影响看板可见结果。公开仓库也需要 PAT 识别“我”。</p>
+<p><a href="https://github.com/settings/personal-access-tokens/new">前往 GitHub 创建 PAT ↗</a></p>
+<p class="hint">配置后，在看板点击刷新。AI 分析使用下方宿主“模型与任务”设置或当前新任务的模型选择。首次安装所列的任务权限由宿主确认。</p>
+<p id="feedback" role="status" aria-live="polite"></p>
+</main><script type="module" src="settings.js"></script></body></html>
